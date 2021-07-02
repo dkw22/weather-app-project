@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="An Awesome Weather App"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+
+
+    <title>Current Anywhere Weather</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+</head>
+<body>
+    <!-- Form to Retrieve Weather -->
+    <div class="container justify-content-center">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-3">
+                <h2>Current Anywhere Weather</h2>
+            </div>
+            <div class="col-md-7 col-md-offset-3">
+                <form class="form-inline" name="gettWeather" id="gettWeather">
+                    <div class="form-group mb-2">
+                        <label for="city" ></label>
+                        <input type="text" name="City" class="form-control" placeholder="Enter City" id="city">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="zip" ></label>
+                        <input type="text" name="ZipCode" class="form-control" placeholder="Enter Zip Code" id="zipcode">
+                    </div>
+                    <button type="button" class="btn btn-primary mb-2" onclick="getWeather();randomPicture()">Get Weather</button>
+                    <!-- <button type="button" class="btn btn-primary mb-2" onclick="weatherGetter();cityGetter()">Use Location</button> -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Space to Display Weather -->
+    <div class="container justify-content-center" id="gotWeather">
+        <h3 id=""></h3>
+    </div>
+
+    <!-- Display weather Clean -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-3">
+                <div class="weather border-right rounded">
+                    <div class="current" id="img_url">
+                        <div class="info container">
+                            <div>&nbsp;</div>
+                            <div class="city">
+                                <small>
+                                    <small id="city-name"><!--City:--></small>
+                                </small>
+                                <div id="city-title"><!--name data--></div>
+                            </div>
+                            <div>
+                                <p id="high-name"></p><!--High-->
+                                <div class="temp row">
+                                    <div id="tempHigh"><!--high data--></div>
+                                    <p id='deg1'></p><!--&deg;-->
+                                    <small id='f'><!--F--></small>
+                                </div>
+                            </div>
+                            <div>
+                                <p id="low-name"></p><!--Low-->
+                                <div class="temp row">
+                                    <div id="tempLow"><!--low data--></div> 
+                                    <p id='deg2'></p><!--&deg;-->
+                                    <small id='f2'><!--F--></small>
+                                </div>
+                            </div>
+                            <div class="wind row" id="description-for">
+                                <p id='the-forecast'></p><!--Forecast:&nbsp; -->
+                                <div id="description" style='text-transform: capitalize'><!--capitalized desciption data--></div>
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                            <div class="wind row">
+                                <p id='humid-sec'></p><!--Humidity:&nbsp; -->
+                                <div id="humidity"><!--humidity data--></div>
+                                <p id='percent'></p><!--%-->
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Giving Credit to Author for Images -->
+    <div class="container">
+        <p class="container" id="photoCred">Photo by <a href="https://unsplash.com/photos/uu-Jw5SunYI" target="_blank">Max LaRochelle</a>
+         on <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
